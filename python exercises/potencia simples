@@ -1,0 +1,7 @@
+import math
+
+lista = input().split(" ")
+
+numero = float(lista[0])
+numero1 = float(lista[1])
+print("{:.4f}".format(math.pow(numero, numero1)))
