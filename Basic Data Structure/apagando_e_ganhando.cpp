@@ -13,7 +13,7 @@ int main(){
 
         int apagados = 0;
         
-        for(char atual : digitos){
+        for(char atual : digitos){  // O(n)
             while(respostas.size() > 0 && atual > respostas.back() && apagados < d){ // "back" retoma o ultimo elemento da string que está sendo tratada como uma pilha para facilitar na impressão da respostas
                 respostas.pop_back(); // retira o ultimo elemento da "pilha"
                 apagados++;
@@ -27,3 +27,34 @@ int main(){
     return 0;
 
 }
+/**
+ * A complexidade do código é O(n), onde n é o tamanho da string `digitos`.
+ * 
+ * Vamos analisar a complexidade passo a passo:
+ * 
+ * 1. `while(cin >> n >> d)`: A leitura dos valores de `n` e `d` tem complexidade O(1), pois lê dois valores inteiros.
+ * 
+ * 2. `cin >> digitos;`: A leitura da string `digitos` tem complexidade proporcional ao tamanho da entrada, 
+ * ou seja, O(n), onde n é o tamanho da string lida.
+ * 
+ * 3. `for(char atual : digitos)`: O laço percorre cada caractere da string `digitos` uma vez, resultando 
+ * em complexidade O(n), onde n é o tamanho da string.
+ * 
+ * 4. Dentro do laço, temos:
+ * 
+ * - `while(respostas.size() > 0 && atual > respostas.back() && apagados < d)`: A condição do `while` é verificada a 
+ * cada iteração do laço. A operação `respostas.size()` tem complexidade O(1), a comparação `atual > respostas.back()` 
+ * também tem complexidade O(1), e a comparação `apagados < d` também tem complexidade O(1). Portanto, a complexidade 
+ * dessa parte é O(1).
+ * 
+ * - `respostas.pop_back()`: A operação `pop_back()` tem complexidade O(1), pois remove apenas o último caractere 
+ * da string `respostas`.
+ * 
+ * - `respostas.push_back(atual)`: A operação `push_back()` tem complexidade O(1), pois insere um caractere no 
+ * final da string `respostas`.
+ * 
+ * No geral, a complexidade do código é dominada pelo laço `for` que percorre a string `digitos`, resultando 
+ * em uma complexidade total de O(n), onde n é o tamanho da string `digitos`. As demais operações dentro do 
+ * laço têm complexidade constante, portanto, não impactam a complexidade geral do código.
+ * 
+*/
