@@ -16,7 +16,7 @@ int main ()
 			int equipe2 = vencedores[fase - 1][i + 1];
 			int gols1, gols2;
 
-			scanf("%d %d", &gols1, &gols2);
+			cin >> gols1 >> gols2;
 
 			if(gols1 > gols2)
 				vencedores[fase].push_back(equipe1);
@@ -25,5 +25,5 @@ int main ()
 		}
 	}
 
-	printf("%c\n", vencedores[4][0]);
+	cout << vencedores[4][0];
 }
